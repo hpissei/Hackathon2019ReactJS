@@ -1,0 +1,41 @@
+@media (min-width: 576px){
+.p-sm-3 {
+    padding: 1rem !important;
+}
+}
+.p-2 {
+    padding: 0.5rem !important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+.rounded {
+    border-radius: 0.25rem !important;
+}
+@media (min-width: 576px){
+.p-sm-3 {
+    padding: 1rem !important;
+}
+.p-2 {
+    padding: 0.5rem !important;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+}
+.rounded {
+    border-radius: 0.25rem !important;
+}
+html body * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+footer {
+    background: #1a758a;
+    color: #fff;
+    font-size: 12px;
+}
+
