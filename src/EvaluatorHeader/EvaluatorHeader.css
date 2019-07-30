@@ -1,0 +1,17 @@
+.candidate-title-wrapper {
+    padding: 15px 15px 15px 15px;
+}
+
+.navout {
+    margin: 0 0 16px 0;
+}
+
+.navout .bluestrip {
+    background-color: #2189bd;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+.bluestrip {
+    background-color: #1a758a!important;
+}

@@ -1,0 +1,10 @@
+.orangeStrip {
+    background-color: #fa8e16;
+}
+
+.orangeStrip .lightOrange {
+    background-color: #fcb05c;
+    height: 8px;
+    width: 35%;
+    margin: 0 auto;
+}
