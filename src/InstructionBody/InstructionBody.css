@@ -1,0 +1,32 @@
+.light-blue-box {
+    background-color: #fff;
+    border: 1px solid #b0cddb;
+}
+
+.panel-content-wrapper {
+    padding: 18px 30px;
+}
+
+.bullet-list {
+    margin: 0;
+    padding: 0;
+    /*list-style: none;*/
+}
+.margin-left-25
+{
+    margin-left:25px;
+}
+
+.btn-start-verification
+{
+    background:#047db9
+}
+
+.btn-calltoactions {
+    background: #1a758a!important;
+    padding: 0 20px 0 45px;
+    border: solid 1px #1a758a;
+}
+.rightspace {
+    margin-right: 15px;
+}

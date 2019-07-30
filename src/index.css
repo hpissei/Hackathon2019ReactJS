@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+display-data-inline
+{
+  display: inline;
+}
+
+list-styling
+{
+  list-style-type: none; margin: 0; padding: 0;
+}
+
+my-color
+{
+  background: red;
+}
+
+candidate-instruction{
+  border: 1px slateblue;
+}

@@ -1,0 +1,66 @@
+.navout {
+    margin: 0 0 16px 0;
+}
+
+.navout .bluestrip {
+    background-color: #2189bd;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+.bluestrip {
+    background-color: #1a758a!important;
+}
+
+.candidate-title-wrapper {
+    padding: 15px 15px 15px 15px;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.head-title {
+    font-size: 24px;
+    color: #fff;
+    font-family: 'HelveticaNeueLight';
+    font-weight: normal;
+} 
+ /* .align-left {
+    float: left;
+} 
+
+.align-right {
+    float: right;
+}  */
+
+.bredcumbs {
+    background-color: #e9ebed;
+    border-radius: 0 0 6px 6px;
+}
+
+.bredcumbs ul {
+    margin: 0;
+    padding: 0 10px 0 10px;
+    list-style: none;
+}
+
+.bredcumbs ul li {
+    font-size: 11px;
+    color: #000;
+    float: left;
+    line-height: 26px;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "\20";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "\20";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
