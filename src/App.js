@@ -1,9 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import InstructionHeader from './InstructionHeader/InstructionHeader';
-import InstructionBody from './InstructionBody/InstructionBody';
-import { BrowserRouter as Router, Route } from 'react-router-dom';//routing
+import { BrowserRouter as Router, Route , Switch} from 'react-router-dom';//routing
 import MainMenu from './MainMenu/MainMenu';
 //import CompanyLogo from './CompanyLogo/CompanyLogo';
 import Header from './Header/Header';
@@ -12,25 +10,25 @@ import AddEvaluatorPage from './Evaluators/AddEvaluatorPage/AddEvaluatorPage';
 import Evaluators from './Evaluators/index';
 import Verification from './Evaluators/Verfication/Verification';// '../Evaluators/Verification/Verification';
 import Footer from './Footer/Footer'
+import Instruction from './Instruction/Instruction';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <InstructionHeader></InstructionHeader>
-      <InstructionBody></InstructionBody>
-      <Footer></Footer>
-      {/* <header className="App-header">
-        
-      </header> */}
       <Router>
+        <Switch>
         <div>
+          <Header></Header>
+          <Route exact path="/Instruction" component={Instruction}></Route>
+          <Route exact path="/Verification" component={Verification}></Route>
           <Route exact path="/AddEvaluatorPage" component={AddEvaluatorPage} ></Route>
           <Route exact path="/AddEvaluator" component={AddEvaluator}/>
           <Route exact path="/about" />
           <Route exact path="/contact"  />
           <Route exact path="/"  />
+          {/* <Footer></Footer> */}
         </div>
+        </Switch>
       </Router>
     </div>
   );

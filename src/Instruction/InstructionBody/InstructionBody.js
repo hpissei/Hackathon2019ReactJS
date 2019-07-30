@@ -1,5 +1,6 @@
 import React from 'react';
 import './InstructionBody.css';
+import { Link } from 'react-router-dom';
 
 class InstructionBody extends React.Component
 {
@@ -18,12 +19,11 @@ class InstructionBody extends React.Component
                             </ul>
                     		<p>Your evaluators will receive a link to a survey, and their responses will be submitted directly to SkillSurvey and made available to UAT_CareerReadinessCom in one aggregated report, which you can request and review with UAT_CareerReadinessCom. Note that your evaluators will be responding as individuals, based on their personal observations, and not as representatives of any company or organization.</p>
 
-                            <p><a id="btnStartVerification" className="btn-calltoactions rightspace btn-start-verification" href="#" >Enter My Evaluators
+                            <p><Link to="/AddEvaluatorPage" id="btnStartVerification" className="btn-calltoactions rightspace btn-start-verification" href="#" >Enter My Evaluators
                             <span><img src="/Reference/Content/PreHire/Images/ico-add-ref.png" alt=""></img>
-                            </span></a>
+                            </span></Link>
                             
-                            <a id="btnOptOut" href="https://uat-app.skillsurvey.com/Reference/Candidate/OptOut?candidateId=Bj7dwA+wfCB71wuCcKW+WA==" 
-                            target="_blank">Not Interested</a>
+                            <Link to="/Instruction" id="btnOptOut" target="_blank">Not Interested</Link>
                          </p>
                 
                 </div>

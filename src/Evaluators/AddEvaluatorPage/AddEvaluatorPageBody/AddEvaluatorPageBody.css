@@ -1,0 +1,150 @@
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+.pos-relative {
+    position: relative;
+}
+.form-wrapper {
+    padding: 20px;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.mright20 {
+    margin-right: 20px;
+}
+.column50 {
+    width: 49%;
+}
+.border-right {
+    border-right: solid 1px #b7b7b7;
+}
+.align-left {
+    float: left;
+}
+
+.req-star {
+    color: #b80000;
+}
+
+.form-wrapper .form-row {
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-wrapper .form-row label {
+    font-size: 14px;
+    width: 36%;
+    display: inline-block;
+    padding-right: 1%;
+    margin-bottom: 0;
+    line-height: 30px;
+    vertical-align: top;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.form-right-grid {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+    font-size: 12px;
+    font-family: Arial,Helvetica,sans-serif;
+    color: #555;
+    line-height: 28px;
+    vertical-align: top;
+}
+
+
+select {
+    color: #333;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 5px 6px;
+    font-size: 12px;
+    width: 278px;
+}
+
+input[type="text"], input[type="email"] {
+    border: 1px solid #c4c4c1;
+    background: #ffffff;
+    height: 30px;
+    border-radius: 2px;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    color: #64727a;
+    width: 278px;
+    margin-left: 2px;
+}
+
+display-none
+{   
+    display:none;
+}
+
+.addeditreferences-new-ui input[type="text"].xsmalltxt {
+    border: 1px solid #c4c4c1;
+    background: #fff;
+    height: 30px;
+    width: 90px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    color: #64727a;
+}
+
+
+.input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+
+.datepickerStart {
+    width: 134px;
+    margin-right: 5px;
+}
+
+.datepickerEnd {
+    width: 140px;
+    margin-left: -4px;
+}
+
+.formbtn-row {
+    padding: 28px 0;
+    text-align: left;
+}
+
+.formbtn-row input[type="button"], .formbtn-row input[type="submit"] {
+    margin-right: 8px;
+}
+
+.btn-gray {
+    background-position: 0 -166px;
+    background-repeat: repeat-x;
+}
+
+.btn-gray {
+    height: 32px;
+    padding: 0 20px 0 20px;
+    border: 1px solid #a4a5a5;
+    border-radius: 4px;
+    color: #504f4f;
+    font-size: 16px!important;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
