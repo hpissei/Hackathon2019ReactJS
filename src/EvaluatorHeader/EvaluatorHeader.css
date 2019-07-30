@@ -15,3 +15,11 @@
 .bluestrip {
     background-color: #1a758a!important;
 }
+
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem;
+}
