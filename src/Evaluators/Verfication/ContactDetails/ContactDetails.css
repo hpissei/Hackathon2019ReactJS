@@ -68,7 +68,7 @@
     font-weight: normal;
     color: #000;
     font-size: 15px;
-    margin-left: -1700px;
+    margin-left: 0px;
 }
 .tab-sub-header {
     margin-bottom: 15px;
@@ -78,8 +78,24 @@
     font-weight: normal;
     color: #000;
     font-size: 15px;
-    margin-left: -1700px;
+    margin-left: 0px;
 }
 .clearfix {
     zoom: 1;
+}
+
+.panel-header{
+    height: 30px;
+}
+
+h2.verification-header{
+    font-size: 15px;
+}
+
+.panel-wrapper{
+margin-left: 20px;
+}
+
+.form-right-grid input[type="checkbox"], input[type="submit"], input[type="button"] {
+    margin-right: 300px;
 }

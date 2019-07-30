@@ -8,7 +8,7 @@ const ContactDetails = () => {
     return (
         <div className="panel-wrapper">
             <div className="icons-group-horize panel-header panel-header-orng-hdrbg clearfix">
-                <h2>My Information</h2>
+                <h2 class="verification-header">My Information</h2>
                 <span className="float-right"><b className="text-danger">*</b> indicates required field</span>
             </div>
             <div className="form-wrapper" id="candidateForm">
@@ -18,25 +18,34 @@ const ContactDetails = () => {
                 <div className="row">
                     <div className="col-md-6 col-lg-4">
                         <div className="form-group">
-                            <label className="left-text">First Name: <span className="req-star">*</span></label>
-                            <input aria-required="True" className="form-control" data-val="true" data-val-length="First name is too short" data-val-length-max="35" data-val-length-min="1" data-val-regex="Please enter valid first name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter first name" id="FirstName" name="FirstName" type="text" />
+                            <label className="left-text">First Name: <span className="req-star">*</span>
+                                <input aria-required="True" className="form-control" data-val="true" data-val-length="First name is too short" data-val-length-max="35" data-val-length-min="1" data-val-regex="Please enter valid first name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter first name" id="FirstName" name="FirstName" type="text" />
+                            </label>
                             <span className="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true" id="spErrFirstName"></span>
                             <div className="clear"></div>
                         </div>
                     </div>
-                    <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
-                            <label className="left-text">Last Name: <span className="req-star">*</span></label>
-                            <input aria-required="True" className="form-control" data-val="true" data-val-length="Last name is too short" data-val-length-max="35" data-val-length-min="2" data-val-regex="Please enter valid last name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter last name" id="LastName" name="LastName" type="text" />
-                            <span></span>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div className="row">
                     <div className="col-md-6 col-lg-4">
                         <div className="form-group">
-                            <label className="left-text">Email:<span id="spn_EmailRequire" className="req-star" >*</span></label>
+                            <label className="left-text">Last Name: <span className="req-star">*</span>
+                                <input aria-required="True" className="form-control" data-val="true" data-val-length="Last name is too short" data-val-length-max="35" data-val-length-min="2" data-val-regex="Please enter valid last name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter last name" id="LastName" name="LastName" type="text" />
+                            
+                            </label>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-6 col-lg-4">
+                        <div className="form-group">
+                            <label className="left-text">Email:<span id="spn_EmailRequire" className="req-star" >*</span>
                             <input aria-required="True" className="form-control" data-val="true" data-val-regex="Please enter valid email address" data-val-regex-pattern="^\s*(([A-Za-z0-9]+_.+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\'+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++)|([A-Za-z0-9]+[/&amp;*=?^{}~]))*(([A-Za-z0-9+_.!+])|([A-Za-z0-9]+\-+))+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z\-]{2,24}\s*$" id="Email" name="Email" type="text" required="required" />
+                            
+                            </label>
                             <span className="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true" id="spErrEmail"></span>
                             <div className="clear"></div>
                         </div>
@@ -80,21 +89,21 @@ const ContactDetails = () => {
                     </div>
 
 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="form-group">
-                            <label class="form-group-label" for="CandidateAdditionalFields_2__ResponseValue">
+                    <div className="col-md-6 col-lg-4">
+                        <div className="form-group">
+                            <label className="form-group-label" >
                                 Are you a veteran?:
-                      <span class="req-star">*</span>
+                      <span className="req-star">*</span>
                             </label>
-                            <div class="custom-control-inline">
+                            <div className="custom-control-inline">
                                 <input checked="checked" data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue" onclick="validateRadioFields(2)" type="radio" value="5" />
                                     <span>Yes</span>
                       </div>
-                                <div class="custom-control-inline">
+                                <div className="custom-control-inline">
                                     <input data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue" onclick="validateRadioFields(2)" type="radio" value="6" />
                                         <span>No</span>
                       </div>
-                                    <span class="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" class="error-msg"></span></div>
+                                    <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" class="error-msg"></span></div>
                                 </div>
                             </div>
 
@@ -116,6 +125,7 @@ const ContactDetails = () => {
                     </div>
                 </div>
             </div>
+            <br />
         </div>
     )
 };
