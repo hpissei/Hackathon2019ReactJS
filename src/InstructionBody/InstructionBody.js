@@ -18,8 +18,6 @@ class InstructionBody extends React.Component
                             </ul>
                     		<p>Your evaluators will receive a link to a survey, and their responses will be submitted directly to SkillSurvey and made available to UAT_CareerReadinessCom in one aggregated report, which you can request and review with UAT_CareerReadinessCom. Note that your evaluators will be responding as individuals, based on their personal observations, and not as representatives of any company or organization.</p>
 
-                            <Link to="/login" />
-
                             <p><a id="btnStartVerification" className="btn-calltoactions rightspace btn-start-verification" href="#" >Enter My Evaluators
                             <span><img src="/Reference/Content/PreHire/Images/ico-add-ref.png" alt=""></img>
                             </span></a>
