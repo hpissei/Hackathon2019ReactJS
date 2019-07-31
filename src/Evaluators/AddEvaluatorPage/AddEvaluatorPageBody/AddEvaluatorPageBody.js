@@ -1,5 +1,6 @@
 import React from 'react';
 import './AddEvaluatorPageBody.css'
+import $ from "jquery";
 
 class AddEvaluatorPageBody extends React.Component
 {
@@ -34,49 +35,49 @@ class AddEvaluatorPageBody extends React.Component
         alert("Cancel")
     }
 
-    // handleSubmit(event)
-    // {
-    //     $.ajax({
-    //         url: process.env.NODE_ENV !== "production" ? '/getMail' : "http://www.fransbernhard.se/magden/php/mailer.php",
-    //         type: 'POST',
-    //         data: {
-    //           'SalutationId': this.state.SalutationId,
-    //           'FirstName': this.state.FirstName,
-    //           'LastName':this.state.LastName,
-    //           'Email':this.state.Email,
-    //           'CountryId':this.state.CountryId,
-    //           'City':this.state.City,
-    //           'WorkPhoneAreaCode':this.state.WorkPhoneAreaCode,
-    //           'WorkPhoneExtension':this.state.WorkPhoneExtension,
-    //           'WorkPhoneNumber':this.state.WorkPhoneNumber,
-    //           'rdRelationshipType':this.state.rdRelationshipType,
-    //           'RelationshipId':this.state.RelationshipId,
-    //           'StartMonth':this.state.StartMonth,
-    //           'EndMonth':this.state.EndMonth,
-    //           'StartYear':this.state.StartYear,
-    //           'EndYear':this.state.EndYear,
-    //           'JobTitleWithCandidate':this.state.JobTitleWithCandidate,
-    //           'Company':this.state.Company
-    //         },
-    //         cache: false,
-    //         success: function(data) {
-    //           // Success..
-    //           this.setState({
-    //             type: 'success',
-    //             message: 'Evaluator details successfully entered'
-    //           });
-    //           //console.log('success');
-    //         }.bind(this),
-    //         // Fail..
-    //         error: function(xhr, status, err) {
-    //           this.setState({
-    //             type: 'success',
-    //             message: 'Failed to enter evaluator details'
-    //           });
-    //           //console.log(message);
-    //         }.bind(this)
-    //       });
-    //     }
+    handleSubmit(event)
+    {
+        $.ajax({
+            url: process.env.NODE_ENV !== "production" ? '/getMail' : "http://www.fransbernhard.se/magden/php/mailer.php",
+            type: 'POST',
+            data: {
+              'SalutationId': this.state.SalutationId,
+              'FirstName': this.state.FirstName,
+              'LastName':this.state.LastName,
+              'Email':this.state.Email,
+              'CountryId':this.state.CountryId,
+              'City':this.state.City,
+              'WorkPhoneAreaCode':this.state.WorkPhoneAreaCode,
+              'WorkPhoneExtension':this.state.WorkPhoneExtension,
+              'WorkPhoneNumber':this.state.WorkPhoneNumber,
+              'rdRelationshipType':this.state.rdRelationshipType,
+              'RelationshipId':this.state.RelationshipId,
+              'StartMonth':this.state.StartMonth,
+              'EndMonth':this.state.EndMonth,
+              'StartYear':this.state.StartYear,
+              'EndYear':this.state.EndYear,
+              'JobTitleWithCandidate':this.state.JobTitleWithCandidate,
+              'Company':this.state.Company
+            },
+            cache: false,
+            success: function(data) {
+              // Success..
+              this.setState({
+                type: 'success',
+                message: 'Evaluator details successfully entered'
+              });
+              //console.log('success');
+            }.bind(this),
+            // Fail..
+            error: function(xhr, status, err) {
+              this.setState({
+                type: 'success',
+                message: 'Failed to enter evaluator details'
+              });
+              //console.log(message);
+            }.bind(this)
+          });
+        }
     
      render()
      {

@@ -110,7 +110,7 @@ const ContactDetails = () => {
 
 
 
-                </div>
+                </div>  
             </div>     
             <div className="form-action">
                 <div className="row">

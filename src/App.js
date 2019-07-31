@@ -11,6 +11,7 @@ import Evaluators from './Evaluators/index';
 import Verification from './Evaluators/Verfication/Verification';// '../Evaluators/Verification/Verification';
 import Footer from './Footer/Footer'
 import Instruction from './Instruction/Instruction';
+import EvaluatorIndex from './Evaluators/EvaluatorsIndex/EvaluatorIndex';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route exact path="/AddEvaluator" component={AddEvaluator}/>
           <Route exact path="/about" />
           <Route exact path="/contact"  />
-          <Route exact path="/"  />
+          <Route exact path="/EvaluatorIndex" component = {EvaluatorIndex} />
           {/* <Footer></Footer> */}
         </div>
         </Switch>
