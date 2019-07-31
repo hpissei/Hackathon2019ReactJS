@@ -8,7 +8,7 @@ const ContactDetails = () => {
     return (
         <div className="panel-wrapper">
             <div className="icons-group-horize panel-header panel-header-orng-hdrbg clearfix">
-                <h2 class="verification-header">My Information</h2>
+                <h2 className="verification-header">My Information</h2>
                 <span className="float-right"><b className="text-danger">*</b> indicates required field</span>
             </div>
             <div className="form-wrapper" id="candidateForm">
@@ -62,11 +62,11 @@ const ContactDetails = () => {
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="form-group">
-                            <label id="labelProfile_0" for="CandidateAdditionalFields_0__ResponseValue">
+                            <label id="labelProfile_0" >
                                 Feedback Due Date:
                             </label>
                             <div id="dvDateSelector">
-                                <input class="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="CandidateAdditionalFields_0__ResponseValue" name="CandidateAdditionalFields[0].ResponseValue" readonly="readonly" type="text" value="07/29/2019" />
+                                <input class="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="CandidateAdditionalFields_0__ResponseValue" name="CandidateAdditionalFields[0].ResponseValue" readOnly="readonly" type="text" value="07/29/2019" />
                                     <span class="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[0].AdditionalFieldLabel" data-valmsg-replace="true"></span>
                                     <div><span id="ErrorSpan_0" class="error-msg"></span></div>
                             </div>
@@ -96,7 +96,7 @@ const ContactDetails = () => {
                       <span className="req-star">*</span>
                             </label>
                             <div className="custom-control-inline">
-                                <input checked="checked" data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue" onclick="validateRadioFields(2)" type="radio" value="5" />
+                                <input  data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue" onClick="validateRadioFields(2)" type="radio" value="5" />
                                     <span>Yes</span>
                       </div>
                                 <div className="custom-control-inline">

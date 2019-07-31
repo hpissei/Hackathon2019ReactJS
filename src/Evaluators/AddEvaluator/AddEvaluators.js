@@ -18,9 +18,9 @@ const AddEvaluator = () => {
 
         <div className="table-actions">
             <span id="spanReferencesSummary" className="message errorSummary">Please enter at least 2 more Evaluators (1 must be Manager)</span>
-            <input id="btnAddReference" className="btn-blue text-transform" type="button" value="Add Evaluator" />
+            
             <Link to="/AddEvaluatorPage">
-                <button className="btn btn-success" >Add Evaluator</button>
+                <input id="btnAddReference" className="btn-blue text-transform" type="button" value="Add Evaluator" />
             </Link>
             <input id="btnSendCommunication" className="text-transform btn-blue-disabled" type="button" value="Send Link to Evaluator(s)" disabled="disabled" />
 	    </div>

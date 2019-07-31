@@ -13,7 +13,19 @@ import Footer from './Footer/Footer'
 import Instruction from './Instruction/Instruction';
 import EvaluatorIndex from './Evaluators/EvaluatorsIndex/EvaluatorIndex';
 
-function App() {
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: 1
+    }
+
+    console.log(props);
+  }
+
+  render(){
   return (
     <div className="App">
       <Router>
@@ -21,7 +33,7 @@ function App() {
         <div>
           <Header></Header>
           <Route exact path="/Instruction" component={Instruction}></Route>
-          <Route exact path="/Verification" component={Verification}></Route>
+          <Route exact path="/Verification" data={this.state.id} component={Verification}></Route>
           <Route exact path="/AddEvaluatorPage" component={AddEvaluatorPage} ></Route>
           <Route exact path="/AddEvaluator" component={AddEvaluator}/>
           <Route exact path="/about" />
@@ -33,6 +45,7 @@ function App() {
       </Router>
     </div>
   );
+  }
 }
 
 export default App;
