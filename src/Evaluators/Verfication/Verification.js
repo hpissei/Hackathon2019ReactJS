@@ -11,8 +11,8 @@ const Verification = (props) => {
     alert(props.location.search.substring(4,props.location.search.length));
 
     $.ajax({
-        url: 'http://10.0.0.9:56345/api/Candidate/',
-        data: props.location.search.substring(4,props.location.search.length),
+        url: 'http://localhost:56345/api/Candidate/' + props.location.search.substring(4,props.location.search.length),
+        //data: props.location.search.substring(4,props.location.search.length),
         success: function(response){
             alert(response);
         },

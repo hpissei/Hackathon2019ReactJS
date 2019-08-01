@@ -60,31 +60,31 @@ const ContactDetails = () => {
                     <div className="col-12">
                         <h4>About your current status:</h4>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="form-group">
+                    <div className="col-md-6 col-lg-4">
+                        <div className="form-group">
                             <label id="labelProfile_0" >
                                 Feedback Due Date:
                             </label>
                             <div id="dvDateSelector">
-                                <input class="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="CandidateAdditionalFields_0__ResponseValue" name="CandidateAdditionalFields[0].ResponseValue" readOnly="readonly" type="text" value="07/29/2019" />
-                                    <span class="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[0].AdditionalFieldLabel" data-valmsg-replace="true"></span>
-                                    <div><span id="ErrorSpan_0" class="error-msg"></span></div>
+                                <input className="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="CandidateAdditionalFields_0__ResponseValue" name="CandidateAdditionalFields[0].ResponseValue" readOnly="readonly" type="text" defaultValue="07/29/2019" />
+                                    <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[0].AdditionalFieldLabel" data-valmsg-replace="true"></span>
+                                    <div><span id="ErrorSpan_0" className="error-msg"></span></div>
                             </div>
                             </div>
                         </div>
 
-                    <div class="col-md-6 col-lg-4">
-                        <div class="form-group">
-                            <label id="labelProfile_1" for="CandidateAdditionalFields_1__ResponseValue">
+                    <div className="col-md-6 col-lg-4">
+                        <div className="form-group">
+                            <label id="labelProfile_1" >
                                 Year:
-                      <span class="req-star">*</span>
+                      <span className="req-star">*</span>
                             </label>
-                            <select class="form-control custom-select" data-error-required="Please select year" data-field-type-id="2" data-standard-fields="2" data-visibility-id="3" id="CandidateAdditionalFields_1__ResponseValue" name="CandidateAdditionalFields[1].ResponseValue" onchange="validateFormat(1)"><option value="">Select</option>
-                                <option value="1">Freshman</option>
-                                <option selected="selected" value="2">Sophomore</option>
-                                <option value="3">Junior</option>
-                                <option value="4">Senior</option>
-                            </select><span class="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[1].AdditionalFieldLabel" data-valmsg-replace="true"></span>                      <div><span id="ErrorSpan_1" class="error-msg"></span></div>
+                            <select className="form-control custom-select" data-error-required="Please select year" data-field-type-id="2" data-standard-fields="2" data-visibility-id="3" id="CandidateAdditionalFields_1__ResponseValue" name="CandidateAdditionalFields[1].ResponseValue"><option defaultValue="">Select</option>
+                                <option defaultValue="1">Freshman</option>
+                                <option defaultValue="2">Sophomore</option>
+                                <option defaultValue="3">Junior</option>
+                                <option defaultValue="4">Senior</option>
+                            </select><span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[1].AdditionalFieldLabel" data-valmsg-replace="true"></span>                      <div><span id="ErrorSpan_1" className="error-msg"></span></div>
                         </div>
                     </div>
 
@@ -96,14 +96,14 @@ const ContactDetails = () => {
                       <span className="req-star">*</span>
                             </label>
                             <div className="custom-control-inline">
-                                <input  data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue" onClick="validateRadioFields(2)" type="radio" value="5" />
+                                <input  data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="5" />
                                     <span>Yes</span>
                       </div>
                                 <div className="custom-control-inline">
-                                    <input data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue" onclick="validateRadioFields(2)" type="radio" value="6" />
+                                    <input data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="6" />
                                         <span>No</span>
                       </div>
-                                    <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" class="error-msg"></span></div>
+                                    <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" className="error-msg"></span></div>
                                 </div>
                             </div>
 
@@ -122,7 +122,7 @@ const ContactDetails = () => {
                     </div>
                     <div className="col-lg-4 text-right">
                         <Link to="/EvaluatorIndex">
-                            <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" value="Continue"  />
+                            <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" defaultValue="Continue"  />
                         </Link>
                     </div>
                 </div>
