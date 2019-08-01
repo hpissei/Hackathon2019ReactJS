@@ -9,18 +9,25 @@ import $ from 'jquery';
 const Verification = (props) => {
 
     alert(props.location.search.substring(4,props.location.search.length));
-
+debugger;
     $.ajax({
         url: 'http://localhost:56345/api/Candidate/' + props.location.search.substring(4,props.location.search.length),
         //data: props.location.search.substring(4,props.location.search.length),
+        dataType: 'jsonp',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials' : true,
+'Access-Control-Allow-Methods' : 'GET, POST',
+'Access-Control-Allow-Headers' : 'Origin, Content-Type, Accept'
+        },
         success: function(response){
-            alert(response);
+            alert('success' + JSON.stringify(response));
         },
         fail: function (response){
-            alert(response);
+            alert('fail' + JSON.stringify(response));
         },
         error: function(response){
-            alert(response);
+            alert('error' + JSON.stringify(response));
         }
     })
 
