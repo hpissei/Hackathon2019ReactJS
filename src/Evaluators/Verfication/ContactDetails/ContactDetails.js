@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContactDetails.css';
-
+import {Link } from 'react-router-dom';//routing
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -121,7 +121,9 @@ const ContactDetails = () => {
                         &nbsp;
                     </div>
                     <div className="col-lg-4 text-right">
-                        <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" value="Continue"  />
+                        <Link to="/EvaluatorIndex">
+                            <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" value="Continue"  />
+                        </Link>
                     </div>
                 </div>
             </div>

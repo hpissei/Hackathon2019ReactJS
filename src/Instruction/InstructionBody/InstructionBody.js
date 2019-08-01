@@ -20,8 +20,8 @@ class InstructionBody extends React.Component {
                             </p>
 
                     <p>
-                        <Link to="/AddEvaluatorPage"  className="btn-calltoactions rightspace btn-start-verification">
-                            <button className="btn btn-success" >Enter My Evaluators</button>
+                        <Link to="/Verification"  className="btn-calltoactions rightspace btn-start-verification">
+                            <button className="btn" >Enter My Evaluators</button>
                             <span>
                                <img src="/Reference/Content/PreHire/Images/ico-add-ref.png" alt=""></img>
                             </span>
