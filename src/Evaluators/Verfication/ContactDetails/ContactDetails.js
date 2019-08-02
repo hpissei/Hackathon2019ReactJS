@@ -2,10 +2,89 @@ import React from 'react';
 import './ContactDetails.css';
 import {Link } from 'react-router-dom';//routing
 import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import { Redirect } from 'react-router-dom';
+//import EvaluatorIndex from '../../EvaluatorsIndex/EvaluatorIndex';// './EvaluatorIndex/EvaluatorIndex';// ./Evaluators/EvaluatorsIndex/EvaluatorIndex';
 
 
-const ContactDetails = () => {
+class ContactDetails extends React.Component{//= () => {
+
+    constructor(data) {
+        super(data);
+        this.state = {
+            redirect: false,
+            //id : this.props.data
+        }
+        alert(this.props.data.selected)
+    }
+
+    // to check why this function is not working 
+    setRedirect = () => {
+        this.setState({
+          redirect: true
+        })
+        
+      }
+
+      renderRedirect = () => {
+        //if (this.redirect) {
+          return <Redirect to='/EvaluatorIndex' />
+        //}
+      }
+
+    post(props){
+        console.log('Contact details' + props);
+        fetch("http://localhost:56345/api/Candidate/AddCandidateDetails",
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify({  FirstName : $("#FirstName").val(),
+                LastName : $("#LastName").val(),
+                Email : $("#Email").val(),
+                FeedbackDueDate: $("#date").val(),
+                IsVeteran : $("input[id='veteran']:checked").val(),
+                FieldYear : $("#year").val(),
+                CandidateId: $("#hdnCandidateId").val()})
+            })
+            .then(function (res) { console.log(res)
+                //this.redirectionFlag = true;
+                window.location='/EvaluatorIndex';
+                //this.renderRedirect();
+            })
+            .catch(function (res) { console.log(res) })
+
+       
+
+        alert('Posting...........');
+        // $.ajax({
+        //     url: 'http://localhost:56345/api/Candidate/AddCandidateDetails',
+        //     type: 'POST',
+        //     contentType: 'application/json', //'application/text'
+        //     data: {
+        //         FirstName : $("#FirstName").val(),
+        //         LastName : $("#LastName").val(),
+        //         Email : $("#Email").val(),
+        //         FeedbackDueDate: $("#date").val(),
+        //         IsVeteran : $("input[id='veteran']:checked").val(),
+        //         FieldYear : $("#year").val()
+        //     },
+        //     success: function(response){
+        //         console.log('response add' + response);
+        //     },
+        //     error: function(response)
+        //     {
+        //         console.log('response err' + response);
+        //     }
+
+        // })
+    }
+
+    render(){
     return (
+        
         <div className="panel-wrapper">
             <div className="icons-group-horize panel-header panel-header-orng-hdrbg clearfix">
                 <h2 className="verification-header">My Information</h2>
@@ -66,7 +145,7 @@ const ContactDetails = () => {
                                 Feedback Due Date:
                             </label>
                             <div id="dvDateSelector">
-                                <input className="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="CandidateAdditionalFields_0__ResponseValue" name="CandidateAdditionalFields[0].ResponseValue" readOnly="readonly" type="text" defaultValue="07/29/2019" />
+                                <input className="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="date" name="CandidateAdditionalFields[0].ResponseValue" readOnly="readonly" type="text" defaultValue="07/29/2019" />
                                     <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[0].AdditionalFieldLabel" data-valmsg-replace="true"></span>
                                     <div><span id="ErrorSpan_0" className="error-msg"></span></div>
                             </div>
@@ -79,11 +158,11 @@ const ContactDetails = () => {
                                 Year:
                       <span className="req-star">*</span>
                             </label>
-                            <select className="form-control custom-select" data-error-required="Please select year" data-field-type-id="2" data-standard-fields="2" data-visibility-id="3" id="CandidateAdditionalFields_1__ResponseValue" name="CandidateAdditionalFields[1].ResponseValue"><option defaultValue="">Select</option>
-                                <option defaultValue="1">Freshman</option>
-                                <option defaultValue="2">Sophomore</option>
-                                <option defaultValue="3">Junior</option>
-                                <option defaultValue="4">Senior</option>
+                            <select className="form-control custom-select" data-error-required="Please select year" data-field-type-id="2" data-standard-fields="2" data-visibility-id="3" id="year" name="CandidateAdditionalFields[1].ResponseValue"><option value="0">Select</option>
+                                <option value="1">Freshman</option>
+                                <option value="2">Sophomore</option>
+                                <option value="3">Junior</option>
+                                <option value="4">Senior</option>
                             </select><span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[1].AdditionalFieldLabel" data-valmsg-replace="true"></span>                      <div><span id="ErrorSpan_1" className="error-msg"></span></div>
                         </div>
                     </div>
@@ -96,11 +175,11 @@ const ContactDetails = () => {
                       <span className="req-star">*</span>
                             </label>
                             <div className="custom-control-inline">
-                                <input  data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="5" />
+                                <input  data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="veteran" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="false" />
                                     <span>Yes</span>
                       </div>
                                 <div className="custom-control-inline">
-                                    <input data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="CandidateAdditionalFields_2__ResponseValue" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="6" />
+                                    <input data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="veteran" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="true" />
                                         <span>No</span>
                       </div>
                                     <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" className="error-msg"></span></div>
@@ -121,15 +200,16 @@ const ContactDetails = () => {
                         &nbsp;
                     </div>
                     <div className="col-lg-4 text-right">
-                        <Link to="/EvaluatorIndex">
-                            <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" defaultValue="Continue"  />
-                        </Link>
+                        {/* <Link to="/EvaluatorIndex"> */}
+                            <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" defaultValue="Continue" onClick={this.post} />
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
             <br />
         </div>
     )
+    }
 };
 
 export default ContactDetails;

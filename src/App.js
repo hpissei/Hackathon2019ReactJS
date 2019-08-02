@@ -19,7 +19,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      id: 1
+      id: 1,
+      redirect: false
     }
 
     console.log(props);
