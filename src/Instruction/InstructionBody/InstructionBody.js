@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom';//routing
 class InstructionBody extends React.Component {
 
     // constructor(props) {
-    //     super(props)
+    //     super(props);
     //     var candId = this.props.location.search.substring(4, this.props.location.search.length);
     // }
    
@@ -25,8 +25,8 @@ class InstructionBody extends React.Component {
                         Your evaluators will receive a link to a survey, and their responses will be submitted directly to SkillSurvey and made available to UAT_CareerReadinessCom in one aggregated report, which you can request and review with UAT_CareerReadinessCom. Note that your evaluators will be responding as individuals, based on their personal observations, and not as representatives of any company or organization.
                             </p>
 
-                    <p>
-                        <Link to="/Verification"  className="btn-calltoactions rightspace btn-start-verification">
+                    <p>{/*{alert('instruction body ' + props.params)} */}
+                        <Link to={"/Verification/" + this.props.id}  className="btn-calltoactions rightspace btn-start-verification">
                             <button className="btn" >Enter My Evaluators</button>
                             <span>
                                <img src="/Reference/Content/PreHire/Images/ico-add-ref.png" alt=""></img>

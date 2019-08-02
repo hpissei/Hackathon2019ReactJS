@@ -1,6 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
+//import {IndexRoute} from 'react-router';
 import { BrowserRouter as Router, Route , Switch} from 'react-router-dom';//routing
 import MainMenu from './MainMenu/MainMenu';
 //import CompanyLogo from './CompanyLogo/CompanyLogo';
@@ -23,7 +24,7 @@ class App extends React.Component {
       redirect: false
     }
 
-    console.log(props);
+    alert( 'App props' + JSON.stringify(props));
   }
 
   render(){
@@ -33,13 +34,14 @@ class App extends React.Component {
         <Switch>
         <div>
           <Header></Header>
-          <Route exact path="/Instruction" component={Instruction}></Route>
-          <Route exact path="/Verification" data={this.state.id} component={Verification}></Route>
-          <Route exact path="/AddEvaluatorPage" component={AddEvaluatorPage} ></Route>
+          {/* <IndexRoute component="/Instruction"></IndexRoute> */}
+          <Route path="/Instruction/:id" component={Instruction}></Route>
+          <Route exact path="/Verification/:id" data={this.state.id} component={Verification}></Route>
+          <Route exact path="/AddEvaluatorPage/:id" component={AddEvaluatorPage} ></Route>
           <Route exact path="/AddEvaluator" component={AddEvaluator}/>
           <Route exact path="/about" />
           <Route exact path="/contact"  />
-          <Route exact path="/EvaluatorIndex" component = {EvaluatorIndex} />
+          <Route exact path="/EvaluatorIndex/:id" component = {EvaluatorIndex} />
           {/* <Footer></Footer> */}
         </div>
         </Switch>

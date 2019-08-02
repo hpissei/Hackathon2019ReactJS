@@ -1,9 +1,11 @@
 import React from 'react';
 import '../AddEvaluator/AddEvaluator.css';
 import {Link } from 'react-router-dom';//routing
+import $ from 'jquery';
 
-const AddEvaluator = () => {
-
+class AddEvaluator extends React.Component//= () => {
+{
+    render(){
     return (
     <div className="ref-table-reference">
         <div className="heading">
@@ -19,13 +21,14 @@ const AddEvaluator = () => {
         <div className="table-actions">
             <span id="spanReferencesSummary" className="message errorSummary">Please enter at least 2 more Evaluators (1 must be Manager)</span>
             
-            <Link to="/AddEvaluatorPage">
-                <input id="btnAddReference" className="btn-blue text-transform" type="button" value="Add Evaluator" />
+            <Link to={"/AddEvaluatorPage/" + this.props.id} className="btn-blue text-transform">
+                {/* <input id="btnAddReference" className="btn-blue text-transform" type="button" value="Add Evaluator" /> */}
             </Link>
             <input id="btnSendCommunication" className="text-transform btn-blue-disabled" type="button" value="Send Link to Evaluator(s)" disabled="disabled" />
 	    </div>
 
     </div>) 
+    }
 };
 
 

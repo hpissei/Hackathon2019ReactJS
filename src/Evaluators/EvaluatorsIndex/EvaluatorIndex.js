@@ -2,16 +2,21 @@ import React from 'react';
 import EvaluatorHeader from '../../EvaluatorHeader/EvaluatorHeader';
 import EvaluatorInformationText from '../../EvaluatorInformationText/EvaluatorInformationText';
 import AddEvaluator from  '../AddEvaluator/AddEvaluators';
+import $ from 'jquery';
 
-const EvaluatorsIndex = () => {
-
-    return (
+class EvaluatorsIndex extends React.Component//= () => {
+{
+    //alert('Evaluator index' + $("#hdnCandidateId").val());
+    
+    render(){
+        return (
         <div>
             <EvaluatorHeader> </EvaluatorHeader>
             <EvaluatorInformationText />
-            <AddEvaluator></AddEvaluator>
+            <AddEvaluator id = {this.props.match.params.id}></AddEvaluator>
         </div>
     )
+    }
 };
 
 export default EvaluatorsIndex;

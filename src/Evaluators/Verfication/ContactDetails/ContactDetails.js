@@ -9,20 +9,20 @@ import { Redirect } from 'react-router-dom';
 
 class ContactDetails extends React.Component{//= () => {
 
-    constructor(data) {
-        super(data);
+    constructor(props) {
+        super(props);
         this.state = {
             redirect: false,
-            //id : this.props.data
+            //id : props.match.id
         }
-        alert(this.props.data.selected)
+       //alert('Id passed from verification to contact' + this.props.id);
     }
 
     // to check why this function is not working 
     setRedirect = () => {
         this.setState({
           redirect: true
-        })
+        })  
         
       }
 
@@ -32,8 +32,10 @@ class ContactDetails extends React.Component{//= () => {
         //}
       }
 
-    post(props){
-        console.log('Contact details' + props);
+      
+
+    post(){
+        //console.log('Contact details' + this.props);
         fetch("http://localhost:56345/api/Candidate/AddCandidateDetails",
             {
                 headers: {
@@ -47,18 +49,19 @@ class ContactDetails extends React.Component{//= () => {
                 FeedbackDueDate: $("#date").val(),
                 IsVeteran : $("input[id='veteran']:checked").val(),
                 FieldYear : $("#year").val(),
-                CandidateId: $("#hdnCandidateId").val()})
+                CandidateId: $("#hdnCandidateId").val()
+            })
             })
             .then(function (res) { console.log(res)
                 //this.redirectionFlag = true;
-                window.location='/EvaluatorIndex';
+                window.location='/EvaluatorIndex/' + $("#hdnCandidateId").val();
                 //this.renderRedirect();
             })
             .catch(function (res) { console.log(res) })
 
        
 
-        alert('Posting...........');
+        //alert('Posting...........');
         // $.ajax({
         //     url: 'http://localhost:56345/api/Candidate/AddCandidateDetails',
         //     type: 'POST',
@@ -200,9 +203,9 @@ class ContactDetails extends React.Component{//= () => {
                         &nbsp;
                     </div>
                     <div className="col-lg-4 text-right">
-                        {/* <Link to="/EvaluatorIndex"> */}
-                            <input className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="submit" defaultValue="Continue" onClick={this.post} />
-                        {/* </Link> */}
+                         {/* <Link to={"/EvaluatorIndex/" + this.props.id}> */}
+                            <button className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="button" defaultValue="Continue" onClick={this.post} />
+                         {/* </Link>  */}
                     </div>
                 </div>
             </div>
