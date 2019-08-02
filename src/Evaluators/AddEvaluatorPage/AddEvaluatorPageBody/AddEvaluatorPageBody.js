@@ -7,7 +7,7 @@ class AddEvaluatorPageBody extends React.Component
     constructor(props) {
         super(props)
         this.state = {
-            SalutationId:"",FirstName:"",LastName:"",Email:"",CountryId:"",City:"",StateId:"",City:"",WorkPhoneAreaCode:"",WorkPhoneExtension : "", 
+            SalutationId:"",FirstName:"",LastName:"",Email:"",Country:"",City:"",State:"",City:"",WorkPhoneAreaCode:"",WorkPhoneExtension : "", 
             WorkPhoneNumber : "", rdRelationshipType : "", RelationshipId : "", StartMonth : "", StartYear: "",EndMonth : "",EndYear: "",JobTitleWithCandidate : "",
             Company : ""
         };
@@ -23,62 +23,48 @@ class AddEvaluatorPageBody extends React.Component
           [name]: value
         });  
     }
-
-    handleSubmit()
-    {
-        alert("Success");
-    }
-     
     
     handleCancel()
     {
         alert("Cancel")
     }
 
-    handleSubmit(event)
+
+    handleSubmit()
     {
-        $.ajax({
-            url: process.env.NODE_ENV !== "production" ? '/getMail' : "http://www.fransbernhard.se/magden/php/mailer.php",
-            type: 'POST',
-            data: {
-              'SalutationId': this.state.SalutationId,
-              'FirstName': this.state.FirstName,
-              'LastName':this.state.LastName,
-              'Email':this.state.Email,
-              'CountryId':this.state.CountryId,
-              'City':this.state.City,
-              'WorkPhoneAreaCode':this.state.WorkPhoneAreaCode,
-              'WorkPhoneExtension':this.state.WorkPhoneExtension,
-              'WorkPhoneNumber':this.state.WorkPhoneNumber,
-              'rdRelationshipType':this.state.rdRelationshipType,
-              'RelationshipId':this.state.RelationshipId,
-              'StartMonth':this.state.StartMonth,
-              'EndMonth':this.state.EndMonth,
-              'StartYear':this.state.StartYear,
-              'EndYear':this.state.EndYear,
-              'JobTitleWithCandidate':this.state.JobTitleWithCandidate,
-              'Company':this.state.Company
-            },
-            cache: false,
-            success: function(data) {
-              // Success..
-              this.setState({
-                type: 'success',
-                message: 'Evaluator details successfully entered'
-              });
-              //console.log('success');
-            }.bind(this),
-            // Fail..
-            error: function(xhr, status, err) {
-              this.setState({
-                type: 'success',
-                message: 'Failed to enter evaluator details'
-              });
-              //console.log(message);
-            }.bind(this)
-          });
-        }
-    
+        const axios = require('axios');
+        axios.post('http://localhost:56345/api/EvaluatorDetails/EvaluatorDetails', {
+                'SalutationId': this.state.SalutationId,
+               'RefFirstName': this.state.FirstName,
+               'RefLastName':this.state.LastName,
+                'RefEmail':this.state.Email,
+                'Country':this.state.Country,
+                'City':this.state.City,
+                'RefState':this.state.State,
+                'WorkPhoneAreaCode':this.state.WorkPhoneAreaCode,
+                'WorkPhoneExtension':this.state.WorkPhoneExtension,
+                'WorkPhoneNumber':this.state.WorkPhoneNumber,
+                'RelationshipType':this.state.rdRelationshipType,
+                'RelationshipId':this.state.RelationshipId,
+                'StartMonth':this.state.StartMonth,
+                'EndMonth':this.state.EndMonth,
+                'StartYear':this.state.StartYear,
+                'EndYear':this.state.EndYear,
+                'JobTitleWithCandidate':this.state.JobTitleWithCandidate,
+                'Company':this.state.Company
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .finally(function () {
+                // always executed
+            });
+    }
+
+  
      render()
      {
         return (
@@ -94,9 +80,9 @@ class AddEvaluatorPageBody extends React.Component
                                     <option value="">Select</option>
                                     <option value="1">Mr.</option>
                                     <option value="2">Ms.</option>
-                                    <option value="5">Dr.</option>
-                                    <option value="6">Professor</option>
-                                    <option value="7">Mrs.</option>
+                                    <option value="3">Dr.</option>
+                                    <option value="4">Professor</option>
+                                    <option value="5">Mrs.</option>
                                     </select>
                               </div>
 
@@ -128,18 +114,19 @@ class AddEvaluatorPageBody extends React.Component
                             <div className="form-row">
                                 <label className="right-text">Country: <span className="req-star">*</span> </label>
                                 <div className="form-right-grid pos-relative">
-                                    <select data-val="true" id="CountryId" name="CountryId" value={this.state.CountryId} onChange={this.handleChange}>
-                                        <option value="1">Afghanistan</option>
-                                        <option value="2">Albania</option>
-                                        <option value="3">Algeria</option>
-                                        <option value="24">Bermuda</option>
-                                        <option value="25">Bhutan</option>
-                                        <option value="44">China</option>
-                                        <option value="81">Germany</option>
-                                        <option value="82">Ghana</option>
-                                        <option value="99">India</option>
-                                        <option value="150">Netherlands</option>
-                                        <option value="151">Netherlands Antilles</option>
+                                    <select data-val="true" id="Country" name="Country" value={this.state.Country} onChange={this.handleChange}>
+                                        <option value="">Select</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="Bermuda">Bermuda</option>
+                                        <option value="Bhutan">Bhutan</option>
+                                        <option value="China">China</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="India">India</option>
+                                        <option value="Netherlands">Netherlands</option>
+                                        <option value="Netherlands Antilles">Netherlands Antilles</option>
                                     </select>
                                 </div>
                             </div>
@@ -156,19 +143,19 @@ class AddEvaluatorPageBody extends React.Component
                       <div className="form-row country-dependent state-field US-field" id="ddlState">
                             <label  className="right-text">State: <span className="req-star">*</span></label>
                             <div className="form-right-grid">
-                                <select area-required="True" data-val="true"  id="StateId" name="StateId" value={this.state.StateId} onChange={this.handleChange}>
+                                <select area-required="True" data-val="true"  id="State" name="State" value={this.state.State} onChange={this.handleChange}>
                                         <option value="">Select</option>
-                                        <option value="2">Alabama</option>
-                                        <option value="1">Alaska</option>
-                                        <option value="4">Arizona</option>
-                                        <option value="3">Arkansas</option>
-                                        <option value="5">California</option>
-                                        <option value="6">Colorado</option>
-                                        <option value="7">Connecticut</option>
-                                        <option value="9">Delaware</option>
-                                        <option value="8">District of Columbia</option>
-                                        <option value="10">Florida</option>
-                                        <option value="11">Georgia</option>
+                                        <option value="Alabama">Alabama</option>
+                                        <option value="Alaska">Alaska</option>
+                                        <option value="Arizona">Arizona</option>
+                                        <option value="Arkansas">Arkansas</option>
+                                        <option value="California">California</option>
+                                        <option value="Colorado">Colorado</option>
+                                        <option value="Connecticut">Connecticut</option>
+                                        <option value="Delaware">Delaware</option>
+                                        <option value="District of Columbia8">District of Columbia</option>
+                                        <option value="Florida">Florida</option>
+                                        <option value="Georgia">Georgia</option>
                                 </select>
                             </div>
                        </div>
@@ -189,8 +176,8 @@ class AddEvaluatorPageBody extends React.Component
                     <div className="form-row clearfix">
                         <label  className="right-text">Evaluator type: <span className="req-star">*</span></label>
                             <div className="form-right-grid">
-                                <input area-required="True" checked="checked" id="rdRelationshipType" name="rdRelationshipType" type="radio" value="0"  checked={this.state.rdRelationshipType === '0'}  onChange={this.handleChange}/> <span>Former</span>
-                                <input area-required="True" id="rdRelationshipType" name="rdRelationshipType" type="radio" value="1"  checked={this.state.rdRelationshipType === '1'}  onChange={this.handleChange} /> <span>Current</span>
+                                <input area-required="True" checked="checked" id="rdRelationshipType" name="rdRelationshipType" type="radio" value="0"  checked={this.state.rdRelationshipType === "0"}  onChange={this.handleChange}/> <span>Former</span>
+                                <input area-required="True" id="rdRelationshipType" name="rdRelationshipType" type="radio" value="1"  checked={this.state.rdRelationshipType === "1"}  onChange={this.handleChange} /> <span>Current</span>
                             </div>
                     </div>
 
@@ -201,13 +188,13 @@ class AddEvaluatorPageBody extends React.Component
                                 <div>
                                     <select area-required="True" id="RelationshipId" name="RelationshipId"  value={this.state.RelationshipId} onChange={this.handleChange}>
                                             <option value="">Select</option>
-                                            <option value="50">Manager (Supervisor, Boss)</option>
-                                            <option value="51">Teacher (Professor, Instructor)</option>
-                                            <option value="52">Coworker</option>
-                                            <option value="53">Peer (or Colleague)</option>
-                                            <option value="54">Fellow Employee</option>
-                                            <option value="55">Subordinate (or Direct Report)</option>
-                                            <option value="56">Client (or Customer)</option>
+                                            <option value="10">Manager (Supervisor, Boss)</option>
+                                            <option value="20">Teacher (Professor, Instructor)</option>
+                                            <option value="30">Coworker</option>
+                                            <option value="40">Peer (or Colleague)</option>
+                                            <option value="50">Fellow Employee</option>
+                                            <option value="60">Subordinate (or Direct Report)</option>
+                                            <option value="70">Client (or Customer)</option>
                                    </select>
                                 </div>
                              </div>
@@ -219,18 +206,18 @@ class AddEvaluatorPageBody extends React.Component
                                 <div className="form-right-grid">
                                     <select area-label="Month" area-required="True" className="datepickerStart" id="StartMonth" name="StartMonth"  value={this.state.StartMonth} onChange={this.handleChange}>
                                         <option value="">Select</option>
-                                        <option value="1">January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
 									</select>								   
                                     <select area-label="Year" area-required="True" className="datepickerEnd" id="StartYear" name="StartYear"  value={this.state.StartYear} onChange={this.handleChange}>
                                             <option value="">Select</option>
@@ -254,20 +241,21 @@ class AddEvaluatorPageBody extends React.Component
                                 <div className="form-right-grid">
                                     <select area-label="Month" area-required="True" className="datepickerStart" id="EndMonth" name="EndMonth"  value={this.state.EndMonth} onChange={this.handleChange}>
                                         <option value="">Select</option>
-                                        <option value="1">January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
 									</select>								   
                                     <select area-label="Year" area-required="True" className="datepickerEnd" id="EndYear" name="EndYear"  value={this.state.EndYear} onChange={this.handleChange}>
+                                    <option value="">Select</option>
                                             <option value="">Select</option>
                                             <option value="2019">2019</option>
                                             <option value="2018">2018</option>

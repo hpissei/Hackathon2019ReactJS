@@ -3,6 +3,12 @@ import './InstructionBody.css';
 import {Link } from 'react-router-dom';//routing
 
 class InstructionBody extends React.Component {
+
+    // constructor(props) {
+    //     super(props)
+    //     var candId = this.props.location.search.substring(4, this.props.location.search.length);
+    // }
+   
     render() {
         return (
             <div className="light-blue-box">
