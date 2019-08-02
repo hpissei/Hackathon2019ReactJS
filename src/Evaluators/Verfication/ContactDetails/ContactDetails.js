@@ -15,7 +15,6 @@ class ContactDetails extends React.Component{//= () => {
             redirect: false,
             //id : props.match.id
         }
-       //alert('Id passed from verification to contact' + this.props.id);
     }
 
     // to check why this function is not working 
@@ -61,7 +60,6 @@ class ContactDetails extends React.Component{//= () => {
 
        
 
-        //alert('Posting...........');
         // $.ajax({
         //     url: 'http://localhost:56345/api/Candidate/AddCandidateDetails',
         //     type: 'POST',

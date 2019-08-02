@@ -3,14 +3,17 @@ import Evaluators from '../index.js';
 import AddEvaluatorPageHeader from './AddEvaluatorPageHeader/AddEvaluatorPageHeader.js';
 import AddEvaluatorPageBody from './AddEvaluatorPageBody/AddEvaluatorPageBody.js';
 
-const AddEvaluatorPage = () =>{
-    return (
+class AddEvaluatorPage extends React.Component{//= () =>{
+
+
+    render(){
+        return (
         <div>
             {/* <Evaluators></Evaluators> */}
             <AddEvaluatorPageHeader></AddEvaluatorPageHeader>
-            <AddEvaluatorPageBody></AddEvaluatorPageBody>
+            <AddEvaluatorPageBody id = {this.props.match.params.id}></AddEvaluatorPageBody>
         </div>
-    )
+    )}
 };
 
 export default AddEvaluatorPage;

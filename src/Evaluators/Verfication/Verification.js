@@ -21,7 +21,6 @@ class Verification extends React.Component//= (props) => {
 
    
     componentDidMount = () => {
-        alert('verification params' + this.props.match.params.id);
         $.ajax({
             url: 'http://localhost:56345/api/Candidate/' + this.props.match.params.id,//this.props.location.search.substring(4, this.props.location.search.length),
             //data: props.location.search.substring(4,props.location.search.length),

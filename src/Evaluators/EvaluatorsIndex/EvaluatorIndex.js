@@ -6,8 +6,7 @@ import $ from 'jquery';
 
 class EvaluatorsIndex extends React.Component//= () => {
 {
-    //alert('Evaluator index' + $("#hdnCandidateId").val());
-    
+
     render(){
         return (
         <div>

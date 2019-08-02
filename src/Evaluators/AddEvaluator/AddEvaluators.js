@@ -1,7 +1,6 @@
 import React from 'react';
 import '../AddEvaluator/AddEvaluator.css';
 import {Link } from 'react-router-dom';//routing
-import $ from 'jquery';
 
 class AddEvaluator extends React.Component//= () => {
 {

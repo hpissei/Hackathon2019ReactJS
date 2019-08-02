@@ -6,7 +6,6 @@ class Instruction extends React.Component
 {
     componentDidMount()
     {
-        alert('Instruction main' + this.props.match.params.id);
         console.log('Instruction main' + this.props.match.params.id);
     }
     render()

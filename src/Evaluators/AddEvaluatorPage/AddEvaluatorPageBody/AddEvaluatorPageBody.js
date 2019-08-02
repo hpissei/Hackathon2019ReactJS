@@ -26,7 +26,7 @@ class AddEvaluatorPageBody extends React.Component
     
     handleCancel()
     {
-        alert("Cancel")
+
     }
 
 
@@ -34,6 +34,7 @@ class AddEvaluatorPageBody extends React.Component
     {
         const axios = require('axios');
         axios.post('http://localhost:56345/api/EvaluatorDetails/EvaluatorDetails', {
+                'CandId': this.props.id,
                 'SalutationId': this.state.SalutationId,
                'RefFirstName': this.state.FirstName,
                'RefLastName':this.state.LastName,

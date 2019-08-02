@@ -25,7 +25,7 @@ class InstructionBody extends React.Component {
                         Your evaluators will receive a link to a survey, and their responses will be submitted directly to SkillSurvey and made available to UAT_CareerReadinessCom in one aggregated report, which you can request and review with UAT_CareerReadinessCom. Note that your evaluators will be responding as individuals, based on their personal observations, and not as representatives of any company or organization.
                             </p>
 
-                    <p>{/*{alert('instruction body ' + props.params)} */}
+                    <p>
                         <Link to={"/Verification/" + this.props.id}  className="btn-calltoactions rightspace btn-start-verification">
                             <button className="btn" >Enter My Evaluators</button>
                             <span>

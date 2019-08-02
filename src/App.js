@@ -24,7 +24,6 @@ class App extends React.Component {
       redirect: false
     }
 
-    alert( 'App props' + JSON.stringify(props));
   }
 
   render(){
