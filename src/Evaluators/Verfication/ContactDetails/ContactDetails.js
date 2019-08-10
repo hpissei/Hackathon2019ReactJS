@@ -87,6 +87,12 @@ class ContactDetails extends React.Component{//= () => {
     return (
         
         <div className="panel-wrapper">
+            <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
             <div className="icons-group-horize panel-header panel-header-orng-hdrbg clearfix">
                 <h2 className="verification-header">My Information</h2>
                 <span className="float-right"><b className="text-danger">*</b> indicates required field</span>
@@ -97,37 +103,44 @@ class ContactDetails extends React.Component{//= () => {
                 </h2>
                 <div className="row">
                     <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
+                        <div className="col-md-4">
                             <label className="left-text">First Name: <span className="req-star">*</span>
-                                <input aria-required="True" className="form-control" data-val="true" data-val-length="First name is too short" data-val-length-max="35" data-val-length-min="1" data-val-regex="Please enter valid first name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter first name" id="FirstName" name="FirstName" type="text" />
                             </label>
+                        </div>
+                        <div className="col-md-6">    
+                            <input aria-required="True" className="form-control" data-val="true" data-val-length="First name is too short" data-val-length-max="35" data-val-length-min="1" data-val-regex="Please enter valid first name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter first name" id="FirstName" name="FirstName" type="text" />
                             <span className="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true" id="spErrFirstName"></span>
                             <div className="clear"></div>
                         </div>
                     </div>
-                    
-                </div>
-                <div className="row">
                     <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
+                        <div className="col-md-4">
                             <label className="left-text">Last Name: <span className="req-star">*</span>
-                                <input aria-required="True" className="form-control" data-val="true" data-val-length="Last name is too short" data-val-length-max="35" data-val-length-min="2" data-val-regex="Please enter valid last name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter last name" id="LastName" name="LastName" type="text" />
-                            
+                             
                             </label>
+                         </div>
+                         <div className="col-md-6">   
+                            <input aria-required="True" className="form-control" data-val="true" data-val-length="Last name is too short" data-val-length-max="35" data-val-length-min="2" data-val-regex="Please enter valid last name" data-val-regex-pattern="^([a-zA-Z &amp;.',/!()-]+)$" data-val-required="Please enter last name" id="LastName" name="LastName" type="text" />
+                            
                             <span></span>
                         </div>
                     </div>
                 </div>
+                <div className="row">
+                    
+                </div><br/>
 
                 <div className="row">
                     <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
+                        <div className="col-md-2">
                             <label className="left-text">Email:<span id="spn_EmailRequire" className="req-star" >*</span>
-                            <input aria-required="True" className="form-control" data-val="true" data-val-regex="Please enter valid email address" data-val-regex-pattern="^\s*(([A-Za-z0-9]+_.+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\'+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++)|([A-Za-z0-9]+[/&amp;*=?^{}~]))*(([A-Za-z0-9+_.!+])|([A-Za-z0-9]+\-+))+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z\-]{2,24}\s*$" id="Email" name="Email" type="text" required="required" />
                             
                             </label>
                             <span className="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true" id="spErrEmail"></span>
                             <div className="clear"></div>
+                        </div>
+                        <div className="col-md-6">
+                            <input aria-required="True" className="form-control" data-val="true" data-val-regex="Please enter valid email address" data-val-regex-pattern="^\s*(([A-Za-z0-9]+_.+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\'+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++)|([A-Za-z0-9]+[/&amp;*=?^{}~]))*(([A-Za-z0-9+_.!+])|([A-Za-z0-9]+\-+))+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z\-]{2,24}\s*$" id="Email" name="Email" type="text" required="required" />
                         </div>
 
                     </div>
@@ -141,24 +154,28 @@ class ContactDetails extends React.Component{//= () => {
                         <h4>About your current status:</h4>
                     </div>
                     <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
+                        <div className="col-md-6">
                             <label id="labelProfile_0" >
                                 Feedback Due Date:
                             </label>
+                        </div>
+                        <div className="col-md-6">
                             <div id="dvDateSelector">
                                 <input className="form-control customizedDateField smalltxt valid" data-field-type-id="3" data-standard-fields="1" data-visibility-id="2" id="date" name="CandidateAdditionalFields[0].ResponseValue" readOnly="readonly" type="text" defaultValue="07/29/2019" />
                                     <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[0].AdditionalFieldLabel" data-valmsg-replace="true"></span>
                                     <div><span id="ErrorSpan_0" className="error-msg"></span></div>
                             </div>
-                            </div>
                         </div>
+                    </div>
 
                     <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
+                        <div className="col-md-2">
                             <label id="labelProfile_1" >
                                 Year:
                       <span className="req-star">*</span>
                             </label>
+                        </div>
+                        <div className="col-md-6">
                             <select className="form-control custom-select" data-error-required="Please select year" data-field-type-id="2" data-standard-fields="2" data-visibility-id="3" id="year" name="CandidateAdditionalFields[1].ResponseValue"><option value="0">Select</option>
                                 <option value="1">Freshman</option>
                                 <option value="2">Sophomore</option>
@@ -170,22 +187,25 @@ class ContactDetails extends React.Component{//= () => {
 
 
                     <div className="col-md-6 col-lg-4">
-                        <div className="form-group">
+                        <div className="col-md-6">
                             <label className="form-group-label" >
                                 Are you a veteran?:
-                      <span className="req-star">*</span>
+                              <span className="req-star">*</span>
                             </label>
+                                                    </div>
+                        <div className="col-md-6">
                             <div className="custom-control-inline">
                                 <input  data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="veteran" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="false" />
                                     <span>Yes</span>
-                      </div>
-                                <div className="custom-control-inline">
+                            </div>
+                            <div className="custom-control-inline">
                                     <input data-error-required="Please select are you a veteran?" data-field-type-id="4" data-standard-fields="3" data-visibility-id="3" id="veteran" name="CandidateAdditionalFields[2].ResponseValue"  type="radio" defaultValue="true" />
                                         <span>No</span>
-                      </div>
-                                    <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" className="error-msg"></span></div>
-                                </div>
                             </div>
+                            <span className="field-validation-valid" data-valmsg-for="CandidateAdditionalFields[2].AdditionalFieldLabel" data-valmsg-replace="true" id="spErrCandidateAdditionalFields_0__Value"></span>                    <div><span id="ErrorSpan_2" className="error-msg"></span></div>
+
+                        </div>
+                    </div>
 
 
 
@@ -202,7 +222,7 @@ class ContactDetails extends React.Component{//= () => {
                     </div>
                     <div className="col-lg-4 text-right">
                          {/* <Link to={"/EvaluatorIndex/" + this.props.id}> */}
-                            <button className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="button" defaultValue="Continue" onClick={this.post} />
+                            <button className="icons-group-horize btn-blue" id="btnContinue" name="btnSubmit" type="button" defaultValue="Continue" onClick={this.post} >Continue</button>
                          {/* </Link>  */}
                     </div>
                 </div>

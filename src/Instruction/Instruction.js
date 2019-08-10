@@ -1,6 +1,7 @@
 import React from 'react';
 import InstructionBody from  './InstructionBody/InstructionBody'
 import InstructionHeader from './InstructionHeader/InstructionHeader'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Instruction extends React.Component
 {

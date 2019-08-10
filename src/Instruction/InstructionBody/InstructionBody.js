@@ -26,11 +26,12 @@ class InstructionBody extends React.Component {
                             </p>
 
                     <p>
-                        <Link to={"/Verification/" + this.props.id}  className="btn-calltoactions rightspace btn-start-verification">
-                            <button className="btn" >Enter My Evaluators</button>
+                        <Link to={"/Verification/" + this.props.id}  >
+                            <button className="btn-calltoactions rightspace btn-start-verification">Enter My Evaluators
                             <span>
-                               <img src="/Reference/Content/PreHire/Images/ico-add-ref.png" alt=""></img>
+                               <img src="http://uat-app.skillsurvey.com/Reference/Content/PreHire/Images/ico-add-ref.png" alt=""></img>
                             </span>
+                            </button>
                         </Link>
                         
                         <a id="btnOptOut" href="https://uat-app.skillsurvey.com/Reference/Candidate/OptOut?candidateId=Bj7dwA+wfCB71wuCcKW+WA=="

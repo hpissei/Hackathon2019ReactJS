@@ -289,10 +289,14 @@ class AddEvaluatorPageBody extends React.Component
               </div>
           </div>
 
-
-            <div className="formbtn-row">
+<div className="row">
+<style dangerouslySetInnerHTML={{__html: `
+      .button { margin-left:300px }
+    `}} />
+            <div className="col-md-offset-2 formbtn-row button">
             <input type="submit" value="Submit" id="btnsubmit" onClick={this.handleSubmit} className="icons-group-horize btn-blue"/>
             <input type="button" value="Cancel" id="btncancel" onClick={this.handleCancel} className="icons-group-horize btn-gray" />
+            </div>
             </div>
           </div>  
         );
