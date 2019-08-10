@@ -1,5 +1,6 @@
 import React from 'react';
 import './AddEvaluatorPageBody.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from "jquery";
 
 class AddEvaluatorPageBody extends React.Component
